@@ -25,7 +25,7 @@ Acceptance Criteria:
 
 Create a new column on the Agent table in the database. This column can be named as 'custom_id'.
 The "custom_id" column allows the facility to save and retrieve 'custom_id' for a specific Agent.
-The "custom_id" column is a nullable field, so it is not mandatory that Facilities create a custom_id.
+The "custom_id" column is a nullable field, so it is not mandatory that Facility create a custom_id.
 Expected effort: 6 hours
 
 Implementation Details:
@@ -35,44 +35,44 @@ Modify the table structure to add the "custom_id" column with an appropriate dat
 Update any relevant data access layers, APIs, and queries to include the new column.
 Perform necessary testing to ensure the modification does not affect existing functionality.
 
-## Ticket 2: Update the Facilities interface
+## Ticket 2: Update the Facility interface
 
 Description:
-Update the Facilities interface so it may be able to input the custom_id of their choice.
+Update the Facility interface so it may be able to input the custom_id of their choice.
 
 Acceptance Criteria:
 
 New input text for custom_id is created in the layout of the page where Facility manages its Agents
-The existing Agent details view is updated to display the custom ID, if available, if not it displays the internal id from database.
-The Facility can edit or remove the custom ID for an Agent.
-The custom ID is saved and retrieved correctly from the database.
-Time/Effort Estimate: 8 hours
+The existing Agent details view is updated to display the custom_id, if available, if not it displays the internal id from database.
+The Facility can edit or remove the custom_id for an Agent.
+The custom_id is saved and retrieved correctly from the database.
+Expected effort: 8 hours
 
 Implementation Details:
 
 (Optional) A Designer creates the layout modification for the new custom_id input on the Facility interface.
-Modify the Agent details layout to display the custom ID, if available, if not available, it displays the internal id from databse.
-Add an input field in the Agent management interface to capture custom IDs.
-Implement functionality to save and retrieve the custom ID for an Agent from the database.
-Implement edit and remove options for the custom ID.
+Modify the Agent details layout to display the custom_id, if available, if not available, it displays the internal id from databse.
+Add an input field in the Agent management interface to capture custom_ids.
+Implement functionality to save and retrieve the custom_id for an Agent from the database.
+Implement edit and remove options for the custom_id.
 Perform necessary testing to ensure the modification does not affect existing functionality.
 
 ## Ticket 3: Report Generation Update
 
 Description:
-Update the report generation process to use custom IDs when available, instead of the internal database IDs.
+Update the report generation process to use custom_id when available, instead of the internal database ID.
 
 Acceptance Criteria:
 
-When generating reports, the system checks if a custom ID is available for each Agent.
-If a custom ID exists, it is used in the report instead of the internal database ID.
-Reports reflect the correct custom IDs assigned by facilities.
-Time/Effort Estimate: 6 hours
+When generating reports, the system checks if a custom_id is available for each Agent.
+If a custom_id exists, it is used in the report instead of the internal database ID.
+Reports reflect the correct custom_id assigned by Facility.
+Expected effort: 6 hours
 
 Implementation Details:
 
 Identify the code modules/functions responsible for report generation.
-Implement logic to check if a custom ID is available for each Agent.
-Modify the report generation process to use the custom ID, if available, instead of the internal database ID.
-Perform necessary testing to ensure the reports display the correct custom IDs.
+Implement logic to check if a custom_id is available for each Agent.
+Modify the report generation process to use the custom_id, if available, instead of the internal database ID.
+Perform necessary testing to ensure the modification does not affect existing functionality
 Update relevant documentation regarding the changes made to the report generation process.
