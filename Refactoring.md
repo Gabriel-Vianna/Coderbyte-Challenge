@@ -9,3 +9,11 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+1- First, if an event is not provided, the deterministicPartitionKey method will return the candidate variable with the value of TRIVIAL_PARTITION_KEY, which is "0". So I assigned TRIVIAL_PARTITION_KEY to candidate right at the beginning of the code when the variable is declared. By doing this, I removed 1 'if' clause on line 17.
+
+2- On line 8, we check if event exists, and then we check if there is a property of it, we can do this on the same line and remove 1 more 'if' clause.
+
+3- On line 18, we check if candidate is a string, if not, we convert using JSON.stringfy. But in the code above we can see that there is already a similar conversion, when a partition_key is not provided in event. So the conversion done on line 18 can only be for the case when there is a partition_key and it is not a string, so I take this conversion inside the 'if' clause on line 9.
+
+By doing this steps, I was able to remove 6 lines of code, and make the code much more readable.
